@@ -60,6 +60,7 @@ module.exports = (env, argv) => {
       stats: "errors-only", // 只展示错误信息，避免大量无用日志
       host: getIPAdress()  //获取本机器ip
     },
+    
     module:{
       rules:[
         {
