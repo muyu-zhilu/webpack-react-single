@@ -6,13 +6,15 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => {
     const devMode = argv.mode !== 'production'
+    
     return {
         entry: [
             "babel-polyfill",
             path.join(__dirname, './src/index.js')
         ],
         output:{
-            filename:'main.js'
+            filename:'main.js',
+            globalObject: 'this'
         },
         devServer: {
             port: 3000, //端口号
@@ -31,6 +33,16 @@ module.exports = (env, argv) => {
                         loader: "babel-loader"
                     }
                 },
+                {
+                    test: /\.worker\.js$/, //以.worker.js结尾的文件将被worker-loader加载
+                    use: {
+                        loader: 'worker-loader',
+                        options: {
+                            inline: true,
+                            fallback: false
+                        }
+                    }
+                }, 
                 {
                     test: /\.html$/,
                     use: [{
@@ -88,7 +100,13 @@ module.exports = (env, argv) => {
             new MiniCssExtractPlugin({
                 filename: "[name].css",
                 chunkFilename: "[id].css"
-            })
+            }),
+            // 提供公共代码
+            new webpack.optimize.CommonsChunkPlugin('common.js'), // 默认会把所有入口节点的公共代码提取出来,生成一个common.js
+            // 提供公共代码
+            // 默认会把所有入口节点的公共代码提取出来,生成一个common.js
+            // 只提取main节点和index节点
+            // new webpack.optimize.CommonsChunkPlugin('common.js',['main','index']), 
         ]
     }
 };
