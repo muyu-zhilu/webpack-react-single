@@ -18,6 +18,7 @@ export default {
   effects: {
     * getDetailData ({ payload }, { put, select }) {
         const obj = payload && JSON.parse(payload)
+        
         const params = {
           traceId: obj.traceId,
           fromTime: Math.floor(obj.fromTime/1000),
