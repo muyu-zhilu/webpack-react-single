@@ -1,0 +1,101 @@
+.parking-log-monitor {
+
+    .title{
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .loader {
+        width: 195px;
+        height: 195px;
+        margin: 30px auto;
+        position: relative;
+        perspective: 97px;
+        transform-type: preserve-3d;
+        animation: loading-0 6.9s cubic-bezierrgb(0,0,0) infinite;
+        .loader-inner {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #a10702;
+            margin: -88px 0 0 -10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 10;
+            transform-type: preserve-3d;
+            transform-origin: 50% 88px;
+            transform: rotateZ(30deg);
+            animation: loading-1 1.73s cubic-bezier(.6,0,.4,1) infinite;
+            @keyframes loading-1  {
+                0% {
+                    transform: rotateZ(30deg) rotateX(10deg);
+                }
+                95%, 100% {
+                    transform: rotateZ(390deg) rotateX(10deg);
+                }
+            }
+        }
+
+        .loader-inner:nth-child(2) {
+            background: #faa613;
+            transform: rotateZ(15deg);
+            animation-name: loading-2;
+            animation-delay: 172.5ms;
+            @keyframes loading-2  {
+                0% {
+                    transform: rotateZ(15deg) rotateX(10deg);
+                }
+                95%, 100% {
+                    transform: rotateZ(375deg) rotateX(10deg);
+                }
+            }
+        }
+
+        .loader-inner:nth-child(3) {
+            background: #688e26;
+            transform: rotateZ(0deg);
+            animation-name: loading-3;
+            animation-delay: 345ms;
+            @keyframes loading-3  {
+                0% {
+                    transform: rotateZ(0deg) rotateX(10deg);
+                }
+                95%, 100% {
+                    transform: rotateZ(360deg) rotateX(10deg);
+                }
+            }
+        }
+
+        .loader-inner:nth-child(4) {
+            background: #f44708;
+            transform: rotateZ(-15deg);
+            animation-name: loading-4;
+            animation-delay: 517.5ms;
+            @keyframes loading-4  {
+                0% {
+                    transform: rotateZ(-15deg) rotateX(10deg);
+                }
+                95%, 100% {
+                    transform: rotateZ(345deg) rotateX(10deg);
+                }
+            }
+        }
+
+        .loader-inner:nth-child(5) {
+            background: #2e294e;
+            transform: rotateZ(-30deg);
+            animation-name: loading-5;
+            animation-delay: 690ms;
+            @keyframes loading-5  {
+                0% {
+                    transform: rotateZ(-30deg) rotateX(10deg);
+                }
+                95%, 100% {
+                    transform: rotateZ(330deg) rotateX(10deg);
+                }
+            }
+        }
+    }
+}

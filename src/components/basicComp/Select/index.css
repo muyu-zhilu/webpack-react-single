@@ -1,0 +1,28 @@
+.choosePost{
+  display: inline-block;
+}
+.choosePost label{
+  font-size: 13px;
+  color: #666;
+  padding-right: 8px;
+}
+
+.choosePost label:after{
+  content: ":";
+  margin-left: 2px;
+}
+
+.choosePost :global(.ant-select-selection--single){
+  /* color: #444444; */
+}
+
+/* 多选框 */
+:global(.ant-menu-inline .ant-menu-item){
+  width: 100%;
+}
+
+:global(.ant-select-dropdown){
+  font-size: 13px !important;
+  color: #444444;
+}
+
