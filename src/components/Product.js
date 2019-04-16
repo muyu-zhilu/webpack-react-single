@@ -58,13 +58,3 @@ class Product extends Component {
 
 export default Product
 
-        // const data = JSON.stringify(this.state.data)
-        // var blob = new Blob([d], {
-        //     type: 'text/plain'
-        // });
-        // var reader = new FileReader();
-        // reader.readAsText(blob, 'utf-8');
-        // reader.onload = function (e) {
-        //     console.info(reader.result);
-        //     worker.postMessage(reader.result);
-        // }
